@@ -1,10 +1,16 @@
+import FeedbackForm from "./components/FeedbackForm/FeedbackForm"
+import Footer from "./components/Footer/Footer"
 
 
 function App() {
 
   return (
     <>
-      <h1>Feedback Form</h1>
+     <main>
+        <h1>Reach out to us!</h1>
+        <FeedbackForm />
+     </main>
+      <Footer/>
     </>
   )
 }
