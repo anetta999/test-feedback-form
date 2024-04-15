@@ -1,4 +1,4 @@
-import sprite from '../../../public/sprite.svg';
+import sprite from '../../assets/sprite.svg';
 
 const Footer = () => {
   return (
