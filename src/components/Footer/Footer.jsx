@@ -1,28 +1,23 @@
-import sprite from '../../images/sprite.svg';
+import { TiSocialLinkedin } from "react-icons/ti";
+import { TiSocialTwitter } from "react-icons/ti";
+import { TiSocialFacebook } from "react-icons/ti";
+import { TiSocialPinterest } from "react-icons/ti";
 
 const Footer = () => {
   return (
       <footer>
           <ul>
               <li>
-                  <svg>
-                      <use href={`${sprite}#icon-linkedin`}></use>
-                  </svg>
+                <TiSocialLinkedin />
           </li>
               <li>
-                  <svg>
-                      <use href={`${sprite}#icon-twitter`}></use>
-                  </svg>
+                  <TiSocialTwitter />
           </li>
               <li>
-                   <svg>
-                      <use href={`${sprite}#icon-facebook`}></use>
-                  </svg>
+                   <TiSocialFacebook />
           </li>
               <li>
-                   <svg>
-                      <use href={`${sprite}#icon-pinterest`}></use>
-                  </svg>
+                   <TiSocialPinterest />
           </li>
           </ul>
     </footer>
