@@ -61,12 +61,12 @@ export const globalStyles = css`
   }
 
   ::-webkit-scrollbar-thumb {
-    background-color: rgba(18, 20, 23, 0.05);
+    background-color: rgba(13, 15, 18, 0.271);
     border-radius: 10px;
   }
 
   ::-webkit-scrollbar-track {
-    background-color: rgba(239, 237, 232, 0.1);
+    background-color: rgba(239, 237, 232, 0);
   }
 
   @font-face {

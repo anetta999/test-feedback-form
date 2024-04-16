@@ -1,5 +1,7 @@
 import FeedbackForm from "./components/FeedbackForm/FeedbackForm"
 import Footer from "./components/Footer/Footer"
+import { Section } from "./components/Section/Section";
+import { Title } from "./components/Section/Section.styled";
 
 
 function App() {
@@ -7,12 +9,14 @@ function App() {
   return (
     <>
      <main>
-        <h1>Reach out to us!</h1>
-        <FeedbackForm />
+          <Section>
+            <Title>Reach out to us!</Title>
+            <FeedbackForm />
+          </Section>
      </main>
       <Footer/>
     </>
   )
 }
 
-export default App
+export default App;

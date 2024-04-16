@@ -1,8 +1,9 @@
-import { Formik, Form, Field, ErrorMessage } from 'formik';
+import { Formik } from 'formik';
 import { useDispatch, useSelector } from 'react-redux';
 import * as Yup from 'yup';
 import { selectFormData } from '../../redux/selectors';
 import { fetchFormData } from '../../redux/operations';
+import { Input, StyledForm, LastFormField, FormField, StyledErrorMsg } from './FeedbackForm.styled';
  
  const feedbackSchema = Yup.object().shape({
    name: Yup.string()
@@ -11,7 +12,7 @@ import { fetchFormData } from '../../redux/operations';
      .required('Required'),
    email: Yup.string().email('Invalid email').required('Required'),
    message: Yup.string()
-     .min(4, 'Please, enter some text!')
+     .min(4, 'Please, enter some text')
      .required('Required'),
  });
  
@@ -28,24 +29,24 @@ const FeedbackForm = () => {
           dispatch(fetchFormData(values));
           actions.resetForm();
        }}>
-          <Form>
-          <div>
+          <StyledForm>
+          <FormField>
             <label htmlFor="user-name"></label>
-            <Field id="user-name" type="text" name="name" placeholder="Your name*" />
-            <ErrorMessage component='p' name="name"/>
-          </div>
-          <div>
+            <Input id="user-name" type="text" name="name" placeholder="Your name*" />
+            <StyledErrorMsg component='p' name="name"/>
+          </FormField>
+          <FormField>
             <label htmlFor="user-email"></label>
-            <Field id="user-email" type="email" name="email" placeholder="Your e-mail*" />
-            <ErrorMessage component='p' name="email"/>
-          </div>
-          <div>
+            <Input id="user-email" type="email" name="email" placeholder="Your e-mail*" />
+            <StyledErrorMsg component='p' name="email"/>
+          </FormField>
+          <LastFormField>
             <label htmlFor="user-message"></label>
-            <Field id="user-message" as="textarea" name="message" placeholder="Your message*"></Field>
-            <ErrorMessage component='p' name="message"/>
-          </div>
+            <Input id="user-message" as="textarea" name="message" cols='30' rows='10' placeholder="Your message*"></Input>
+            <StyledErrorMsg component='p' name="message"/>
+          </LastFormField>
           <button type="submit">Send message</button>
-        </Form>
+        </StyledForm>
         </Formik>
       </>
   )
