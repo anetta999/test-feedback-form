@@ -2,10 +2,14 @@ import styled from '@emotion/styled';
 import { Form, Field, ErrorMessage } from 'formik';
 
 export const StyledForm = styled(Form)`
+  width: 100%;
+
+  @media screen and (min-width: ${({ theme }) => theme.breakpoint.tablet}) {
   width: 557px;
+  }
 
   button{
-    max-width: 218px;
+    width: 100%;
     padding-top: 28px;
     padding-bottom: 28px;
     padding-left: 52px;
@@ -21,6 +25,9 @@ export const StyledForm = styled(Form)`
 
     :is(:hover,:focus){
     background-color: ${({ theme }) => theme.colors.accent};
+  }
+  @media screen and (min-width: ${({ theme }) => theme.breakpoint.tablet}) {
+  width: 218px;
   }
   }
 `;

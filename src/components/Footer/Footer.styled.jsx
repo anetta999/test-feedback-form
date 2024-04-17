@@ -10,15 +10,28 @@ export const StyledFooter = styled.footer`
   background-color: ${({ theme }) => theme.colors.lightGrey};
   background-image: url(${pinkSmile}), url(${greenSmile}), url(${yellowSmile});
   background-repeat: no-repeat;
-  background-size: 298px 238px, 79px 97px, 84px 122px;
-  background-position: top 0px left 14px, top 0px right 127px, top 51px right 0px;
+  background-size: 198px 138px, 79px 97px, 84px 122px;
+  background-position: top 70px left 0px, top 0px right 30px, top 90px right 0px;
+
+   @media screen and (min-width: ${({ theme }) => theme.breakpoint.tablet}) {
+    background-size: 298px 238px, 79px 97px, 84px 122px;
+    background-position: top 0px left 14px, top 0px right 127px, top 51px right 0px;
+  }
 `;
 
 export const IconsList = styled.ul`
- margin-left: 193px;
+ margin-left: 100px;
  display: inline-flex;
  align-items: center; 
  gap: 25px;
+
+ @media screen and (min-width: ${({ theme }) => theme.breakpoint.tablet}) {
+    margin-left: 250px;
+  }
+
+  @media screen and (min-width: ${({ theme }) => theme.breakpoint.desktop}) {
+    margin-left: 193px;
+  }
 
  li{
     a{
