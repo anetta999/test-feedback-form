@@ -1,9 +1,10 @@
 import { Formik } from 'formik';
 import { useDispatch, useSelector } from 'react-redux';
 import * as Yup from 'yup';
-import { selectFormData } from '../../redux/selectors';
+import { selectFormData, selectLoading } from '../../redux/selectors';
 import { fetchFormData } from '../../redux/operations';
 import { Input, StyledForm, LastFormField, FormField, StyledErrorMsg } from './FeedbackForm.styled';
+import { Loader } from '../Loader/Loader';
  
  const feedbackSchema = Yup.object().shape({
    name: Yup.string()
@@ -18,6 +19,7 @@ import { Input, StyledForm, LastFormField, FormField, StyledErrorMsg } from './F
  
 const FeedbackForm = () => {
   const formData = useSelector(selectFormData);
+  const isLoading = useSelector(selectLoading);
   const dispatch = useDispatch();
 
   return (
@@ -45,7 +47,7 @@ const FeedbackForm = () => {
             <Input id="user-message" as="textarea" name="message" cols='30' rows='10' placeholder="Your message*"></Input>
             <StyledErrorMsg component='p' name="message"/>
           </LastFormField>
-          <button type="submit">Send message</button>
+          <button type="submit"><span>Send message</span>{isLoading && <Loader/>}</button>
         </StyledForm>
         </Formik>
       </>

@@ -9,6 +9,9 @@ export const StyledForm = styled(Form)`
   }
 
   button{
+    display: flex;
+    gap: 3px;
+    align-items: center;
     width: 100%;
     padding-top: 28px;
     padding-bottom: 28px;
@@ -27,8 +30,9 @@ export const StyledForm = styled(Form)`
     background-color: ${({ theme }) => theme.colors.accent};
   }
   @media screen and (min-width: ${({ theme }) => theme.breakpoint.tablet}) {
-  width: 218px;
+  width: 235px;
   }
+  
   }
 `;
 
