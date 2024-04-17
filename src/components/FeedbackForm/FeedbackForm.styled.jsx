@@ -11,6 +11,7 @@ export const StyledForm = styled(Form)`
   button{
     display: flex;
     gap: 3px;
+    justify-content: center;
     align-items: center;
     width: 100%;
     padding-top: 28px;
