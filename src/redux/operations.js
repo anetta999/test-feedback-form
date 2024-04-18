@@ -8,7 +8,7 @@ export const fetchFormData = createAsyncThunk(
   async (formData, thunkAPI) => {
 
     try {
-      const { data } = await axios.post('/feedbacks', {formData});
+      const { data } = await axios.post('/feedbacks', formData);
       return data;
     } catch (error) {
       toast.error('Something went wrong, please try reloading the page', {
